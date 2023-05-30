@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="stylesheet" href="css/style.min.css" />
+
+    <title>Компания Металл Маркет</title>
+  </head>
+  <body>
+    <div class="container">
+      <button class="modal-button modal__svg myBtn">
+        <img src="icons/email.png" alt="email" />
+      </button>
+      <div class="modal myModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h1>Заголовок</h1>
+          </div>
+          <div class="modal-body">Текст</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal = document.querySelector(".myModal");
+      var btn = document.querySelectorAll(".myBtn");
+      var span = document.getElementsByClassName("close")[0];
+
+      for (let value of btn) {
+        value.addEventListener("click", function () {
+          modal.style.display = "block";
+        });
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
